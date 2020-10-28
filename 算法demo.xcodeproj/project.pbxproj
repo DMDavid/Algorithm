@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1343227A254814B50009B1A2 /* AlogorithmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13432279254814B50009B1A2 /* AlogorithmModel.swift */; };
+		13432708254966270009B1A2 /* AlogorithmModel+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13432707254966270009B1A2 /* AlogorithmModel+Base.swift */; };
+		1343270D254969B30009B1A2 /* ObjcAlogorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 1343270C254969B30009B1A2 /* ObjcAlogorithm.m */; };
 		13536240253D80BA0058B31A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1353623F253D80BA0058B31A /* AppDelegate.swift */; };
 		13536242253D80BA0058B31A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13536241253D80BA0058B31A /* SceneDelegate.swift */; };
 		13536244253D80BA0058B31A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13536243253D80BA0058B31A /* ViewController.swift */; };
@@ -16,6 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13432279254814B50009B1A2 /* AlogorithmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlogorithmModel.swift; sourceTree = "<group>"; };
+		13432707254966270009B1A2 /* AlogorithmModel+Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlogorithmModel+Base.swift"; sourceTree = "<group>"; };
+		1343270A254969B30009B1A2 /* 算法demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "算法demo-Bridging-Header.h"; sourceTree = "<group>"; };
+		1343270B254969B30009B1A2 /* ObjcAlogorithm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjcAlogorithm.h; sourceTree = "<group>"; };
+		1343270C254969B30009B1A2 /* ObjcAlogorithm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjcAlogorithm.m; sourceTree = "<group>"; };
 		1353623C253D80BA0058B31A /* 算法demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "算法demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1353623F253D80BA0058B31A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13536241253D80BA0058B31A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,10 +67,15 @@
 				1353623F253D80BA0058B31A /* AppDelegate.swift */,
 				13536241253D80BA0058B31A /* SceneDelegate.swift */,
 				13536243253D80BA0058B31A /* ViewController.swift */,
+				13432279254814B50009B1A2 /* AlogorithmModel.swift */,
+				13432707254966270009B1A2 /* AlogorithmModel+Base.swift */,
 				13536245253D80BA0058B31A /* Main.storyboard */,
 				13536248253D80BC0058B31A /* Assets.xcassets */,
 				1353624A253D80BC0058B31A /* LaunchScreen.storyboard */,
 				1353624D253D80BC0058B31A /* Info.plist */,
+				1343270B254969B30009B1A2 /* ObjcAlogorithm.h */,
+				1343270C254969B30009B1A2 /* ObjcAlogorithm.m */,
+				1343270A254969B30009B1A2 /* 算法demo-Bridging-Header.h */,
 			);
 			path = "算法demo";
 			sourceTree = "<group>";
@@ -99,6 +112,7 @@
 				TargetAttributes = {
 					1353623B253D80BA0058B31A = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -140,7 +154,10 @@
 			files = (
 				13536244253D80BA0058B31A /* ViewController.swift in Sources */,
 				13536240253D80BA0058B31A /* AppDelegate.swift in Sources */,
+				13432708254966270009B1A2 /* AlogorithmModel+Base.swift in Sources */,
+				1343270D254969B30009B1A2 /* ObjcAlogorithm.m in Sources */,
 				13536242253D80BA0058B31A /* SceneDelegate.swift in Sources */,
+				1343227A254814B50009B1A2 /* AlogorithmModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +301,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "算法demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -292,6 +310,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-21.--demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "算法demo/算法demo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -301,6 +321,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "算法demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -309,6 +330,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-21.--demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "算法demo/算法demo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

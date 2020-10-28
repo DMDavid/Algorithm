@@ -9,11 +9,30 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    lazy var model = AlogorithmModel()
+    let modelojc = ObjcAlogorithm()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("\(smallerNumbersThanCurrent2([5,0,10,0,10,6]))")
+//        print("\(smallerNumbersThanCurrent2([5,0,10,0,10,6]))")
+        
+        
+//        let node1 = AlogorithmModel.TreeNode(1)
+//        let node2 = AlogorithmModel.TreeNode(2)
+//        let node3 = AlogorithmModel.TreeNode(3)
+//        node2.left = node1
+//        node2.right = node3
+        
+//        let model1 = AlogorithmModel.Solution()
+//        model1.preorderTraversal(node2)
+        
+//        print("\(model.uniqueOccurrences([1,2,2,1,1,3]))")
+        
+//        print("\(model.reverseLeftWords("abcdefg", 2))")
+        
+        print("\(model.baserQuickSort())")
     }
 }
 
