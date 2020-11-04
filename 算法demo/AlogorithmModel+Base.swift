@@ -97,3 +97,7 @@ extension AlogorithmModel {
         print("\(data)")
      }
 }
+
+
+extension AlogorithmModel {
+}

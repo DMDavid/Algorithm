@@ -16,6 +16,8 @@
 		13536247253D80BA0058B31A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13536245253D80BA0058B31A /* Main.storyboard */; };
 		13536249253D80BC0058B31A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13536248253D80BC0058B31A /* Assets.xcassets */; };
 		1353624C253D80BC0058B31A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1353624A253D80BC0058B31A /* LaunchScreen.storyboard */; };
+		138749D8255160DF0050795E /* ViewController+Extension1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138749D7255160DF0050795E /* ViewController+Extension1.swift */; };
+		138749DB255258470050795E /* ViewController+Extension2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138749DA255258470050795E /* ViewController+Extension2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		13536248253D80BC0058B31A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1353624B253D80BC0058B31A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1353624D253D80BC0058B31A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		138749D7255160DF0050795E /* ViewController+Extension1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension1.swift"; sourceTree = "<group>"; };
+		138749DA255258470050795E /* ViewController+Extension2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ViewController+Extension2.swift"; path = "Assets.xcassets/ViewController+Extension2.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,8 @@
 				1353623F253D80BA0058B31A /* AppDelegate.swift */,
 				13536241253D80BA0058B31A /* SceneDelegate.swift */,
 				13536243253D80BA0058B31A /* ViewController.swift */,
+				138749D7255160DF0050795E /* ViewController+Extension1.swift */,
+				138749DA255258470050795E /* ViewController+Extension2.swift */,
 				13432279254814B50009B1A2 /* AlogorithmModel.swift */,
 				13432707254966270009B1A2 /* AlogorithmModel+Base.swift */,
 				13536245253D80BA0058B31A /* Main.storyboard */,
@@ -155,8 +161,10 @@
 				13536244253D80BA0058B31A /* ViewController.swift in Sources */,
 				13536240253D80BA0058B31A /* AppDelegate.swift in Sources */,
 				13432708254966270009B1A2 /* AlogorithmModel+Base.swift in Sources */,
+				138749DB255258470050795E /* ViewController+Extension2.swift in Sources */,
 				1343270D254969B30009B1A2 /* ObjcAlogorithm.m in Sources */,
 				13536242253D80BA0058B31A /* SceneDelegate.swift in Sources */,
+				138749D8255160DF0050795E /* ViewController+Extension1.swift in Sources */,
 				1343227A254814B50009B1A2 /* AlogorithmModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

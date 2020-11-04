@@ -8,6 +8,16 @@
 
 import UIKit
 
+
+public class ListNode {
+    public var val: Int
+    public var next: ListNode?
+    public init(_ val: Int) {
+        self.val = val
+        self.next = nil
+    }
+}
+
 class ViewController: UIViewController {
     
     lazy var model = AlogorithmModel()
@@ -32,263 +42,127 @@ class ViewController: UIViewController {
         
 //        print("\(model.reverseLeftWords("abcdefg", 2))")
         
-        print("\(model.baserQuickSort())")
-    }
-}
-
-/*
- 1365. 有多少小于当前数字的数字
- 给你一个数组 nums，对于其中每个元素 nums[i]，请你统计数组中比它小的所有数字的数目。
-
- 换而言之，对于每个 nums[i] 你必须计算出有效的 j 的数量，其中 j 满足 j != i 且 nums[j] < nums[i] 。
-
- 以数组形式返回答案。
-
-  
-
- 示例 1：
-
- 输入：nums = [8,1,2,2,3]
- 输出：[4,0,1,1,3]
- 解释：
- 对于 nums[0]=8 存在四个比它小的数字：（1，2，2 和 3）。
- 对于 nums[1]=1 不存在比它小的数字。
- 对于 nums[2]=2 存在一个比它小的数字：（1）。
- 对于 nums[3]=2 存在一个比它小的数字：（1）。
- 对于 nums[4]=3 存在三个比它小的数字：（1，2 和 2）。
- 示例 2：
-
- 输入：nums = [6,5,4,8]
- 输出：[2,1,0,3]
- 示例 3：
-
- 输入：nums = [7,7,7,7]
- 输出：[0,0,0,0]
-  
-
- 提示：
-
- 2 <= nums.length <= 500
- 0 <= nums[i] <= 100
- */
-extension ViewController {
-    func smallerNumbersThanCurrent2(_ nums: [Int]) -> [Int] {
-        var resultDict: [Int: Int] = [:]
-        let newNums = nums.sorted()
-        var currentNum: Int = 0
-        var repeatNumCount: Int = 1  //出现重复的数字 +1
-        for (index, item) in newNums.enumerated() {
-            if currentNum == item {
-                var count = index - repeatNumCount
-                count = count < 0 ? 0 : count
-                resultDict[item] = count
-                repeatNumCount += 1
-            } else {
-                resultDict[item] = index
-                repeatNumCount = 1
-            }
-            currentNum = item
-        }
+//        print("\(model.baserQuickSort())")
         
-        var result: [Int] = []
-        for item in nums {
-            result.append(resultDict[item]!)
-        }
-        return result
+//        let node1 = ListNode(1)
+//        let node2 = ListNode(2)
+//        let node3 = ListNode(3)
+//
+//        node1.next = node2
+//        node2.next = node3
+//
+//        let pre = reverseList(node1)
+//        print(pre)
+        
+//        print("\(validMountainArray([0,1,2,3,4,5,6,7,8,9]))")
+        let list = [1,2,3,4,5, 6 , 7 , 8 ,9, 10, 11]
+        dealListToTwoSubList(list: list)
     }
     
-    func smallerNumbersThanCurrent(_ nums: [Int]) -> [Int] {
-        var resultList: [Int] = []
-        for item in nums {
-            
-            var count = 0
-            for item2 in nums {
-                if item == item2 {
-                    continue
-                }
-                if item > item2 {
-                    count += 1
-                }
-            }
-            resultList.append(count)
+    /*/
+     剑指 Offer 24. 反转链表
+     定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。
+
+     示例:
+
+     输入: 1->2->3->4->5->NULL
+     输出: 5->4->3->2->1->NULL
+
+     来源：力扣（LeetCode）
+     链接：https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof
+     著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     */
+//    func reverseList(_ head: ListNode?) -> ListNode? {
+//        var cur: ListNode? = nil
+//        var pre = head
+//        while pre != nil {
+//            let temPre = pre?.next
+//            pre?.next = cur
+//            cur = pre
+//            pre = temPre
+//        }
+//        return cur
+    //    }
+    
+    func reverseList(_ head: ListNode?) -> ListNode? {
+        var list: [ListNode] = []
+        var header = head
+        while header != nil {
+            list.append(header!)
+            header = header?.next
         }
-        return resultList
-    }
-}
-
-/*
- 请判断一个链表是否为回文链表。
-
- 示例 1:
-
- 输入: 1->2
- 输出: false
- 示例 2:
-
- 输入: 1->2->2->1
- 输出: true
- 进阶：
- 你能否用 O(n) 时间复杂度和 O(1) 空间复杂度解决此题？
-
- 来源：力扣（LeetCode）
- 链接：https://leetcode-cn.com/problems/palindrome-linked-list
- 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- */
-extension ViewController {
-    func test2() {
         
-        let model = Solution()
+        let res = list.last
+        var tem = res
+        while list.count > 0 {
+            list.removeLast()
+            tem?.next = list.last
+            tem = tem?.next
+        }
         
-        let one = ListNode(1)
-        let two = ListNode(-2)
-        let three1 = ListNode(3)
-        
-        let three2 = ListNode(6)
-        let three3 = ListNode(6)
-        
-        let three4 = ListNode(3)
-        let three = ListNode(-2)
-        let four = ListNode(1)
-        
-        one.next = two
-        two.next = three1
-        three1.next = three2
-        three2.next = three3
-        three3.next = three4
-        three4.next = three
-        three.next = four
-        
-        //        let one = ListNode(1)
-        //        let two = ListNode(2)
-        //        one.next = two
-        
-        //        print("\(model.isPalindrome(one))")
-        
-        print("\(isPalindrome(one))")
+        return res
     }
     
-    public class ListNode {
-        public var val: Int
-        public var next: ListNode?
-        public init(_ val: Int) {
-            self.val = val
-            self.next = nil
-        }
-    }
-    
-    // 遍历，中分，反转一个list，两个list比较
-    class Solution {
-        func isPalindrome(_ head: ListNode?) -> Bool {
-            guard let testHeader = head else { return true }
-            
-            var list:[Int] = []
-            var temHeader: ListNode?
-            
-            temHeader = testHeader
-            list.append(testHeader.val)
-            
-            while temHeader != nil {
-                temHeader = temHeader?.next
-                if let value = temHeader?.val {
-                    list.append(value)
-                }
-            }
-            
-            var intermediate = list.count / 2
-            guard intermediate < list.count, intermediate >= 0 else { return false }
-            let firstList: [Int] = Array(list.prefix(intermediate))
-            var lastList: [Int] = Array(list.suffix(intermediate))
-            
-            let newLastList = Array(lastList.reversed())
-            
-            if firstList.count != newLastList.count, firstList != newLastList { return false }
-            for (index, item) in firstList.enumerated() {
-                let value = newLastList[index]
-                if value != item {
-                    return false
-                }
-            }
-            
-            return true
-        }
-    }
-
-        //快慢指针
-    func isPalindrome(_ l1: ListNode?) -> Bool {
-        if l1 == nil || l1?.next == nil {
-            return false
-        }
-        
-        var fast = l1
-        var slow = l1
-        var nodeArr:[Int] = [Int]()
-        nodeArr.append(l1!.val)
-        while fast?.next != nil && fast?.next?.next != nil {
-            slow = slow?.next
-            fast = fast?.next?.next
-            nodeArr.append(slow!.val)
-        }
-        
-        while slow?.next != nil {
-            if nodeArr.count != 0 {
-                if nodeArr.removeLast() != slow?.next?.val {
-                    return false
-                }
-            } else {
-                return false
-            }
-            slow = slow?.next
-        }
-        return true
-    }
-}
-
-extension ViewController {
     /*
-     实现一个算法，确定一个字符串 s 的所有字符是否全都不同。
+     剑指 Offer 10- I. 斐波那契数列
+     写一个函数，输入 n ，求斐波那契（Fibonacci）数列的第 n 项。斐波那契数列的定义如下：
+
+     F(0) = 0,   F(1) = 1
+     F(N) = F(N - 1) + F(N - 2), 其中 N > 1.
+     斐波那契数列由 0 和 1 开始，之后的斐波那契数就是由之前的两数相加而得出。
+
+     答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。
+
+      
 
      示例 1：
 
-     输入: s = "leetcode"
-     输出: false
+     输入：n = 2
+     输出：1
      示例 2：
 
-     输入: s = "abc"
-     输出: true
-     限制：
+     输入：n = 5
+     输出：5
      */
-    func isUnique(_ astr: String) -> Bool {
-        let strList: [String.Element] = Array(astr)
-        var maps: [String: Int] = [:]
+    func fib(_ n: Int) -> Int {
+        guard n > 1 else { return n }
         
-        for item in strList {
-            
-            var count = 0
-            if var value = maps[String(item)] {
-                value += 1
-                count = value
-                if count > 1 {
-                    return false
-                }
-            }
-            maps[String(item)] = count
+        var a = 0, b = 1, sum = 0
+        for i in 0..<n {
+            sum = (a + b) % 1000000007
+            a = b
+            b = sum
         }
-        
-        return true
-        
-        
-//        let strList = Array(astr)
-//
-//        for index in 0..<strList.count {
-//            let oneStr = strList[index]
-//
-//            for (insideIndex, str) in strList.enumerated() {
-//                if insideIndex == index { continue }
-//                if str == oneStr {
-//                    return false
-//                }
-//            }
-//        }
-//        return true
+        return a
     }
 }
+
+extension ViewController {
+    //分割数组
+    func dealListToTwoSubList<T>(list: [T]) -> [[T]] {
+        
+        let count = list.count/2
+        let hasSingleValue = list.count%2 == 1
+        
+        var targetList: [[T]] = []
+        for i in 0..<count {
+            let firstIndex = i * 2
+            let subList = Array(list[firstIndex...firstIndex+1])
+            targetList.append(subList)
+        }
+        
+        //有余数, 加上最后一个
+        if hasSingleValue {
+            if let lastItem = list.last {
+                var subList: [T] = []
+                subList.append(lastItem)
+                targetList.append(subList)
+            }
+        }
+        
+        
+        print("\(targetList)")
+        return targetList
+    }
+}
+
