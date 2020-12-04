@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		131A051A2563C35000FBB429 /* Lianbiao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131A05192563C35000FBB429 /* Lianbiao.swift */; };
 		1343227A254814B50009B1A2 /* AlogorithmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13432279254814B50009B1A2 /* AlogorithmModel.swift */; };
 		13432708254966270009B1A2 /* AlogorithmModel+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13432707254966270009B1A2 /* AlogorithmModel+Base.swift */; };
 		1343270D254969B30009B1A2 /* ObjcAlogorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 1343270C254969B30009B1A2 /* ObjcAlogorithm.m */; };
+		1349252C255938F500ED530D /* 11Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1349252B255938F500ED530D /* 11Month.swift */; };
 		13536240253D80BA0058B31A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1353623F253D80BA0058B31A /* AppDelegate.swift */; };
 		13536242253D80BA0058B31A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13536241253D80BA0058B31A /* SceneDelegate.swift */; };
 		13536244253D80BA0058B31A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13536243253D80BA0058B31A /* ViewController.swift */; };
@@ -18,14 +20,17 @@
 		1353624C253D80BC0058B31A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1353624A253D80BC0058B31A /* LaunchScreen.storyboard */; };
 		138749D8255160DF0050795E /* ViewController+Extension1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138749D7255160DF0050795E /* ViewController+Extension1.swift */; };
 		138749DB255258470050795E /* ViewController+Extension2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138749DA255258470050795E /* ViewController+Extension2.swift */; };
+		13BC6C1E2578EF2D005B2BA9 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC6C1D2578EF2D005B2BA9 /* Tree.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		131A05192563C35000FBB429 /* Lianbiao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lianbiao.swift; sourceTree = "<group>"; };
 		13432279254814B50009B1A2 /* AlogorithmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlogorithmModel.swift; sourceTree = "<group>"; };
 		13432707254966270009B1A2 /* AlogorithmModel+Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlogorithmModel+Base.swift"; sourceTree = "<group>"; };
 		1343270A254969B30009B1A2 /* 算法demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "算法demo-Bridging-Header.h"; sourceTree = "<group>"; };
 		1343270B254969B30009B1A2 /* ObjcAlogorithm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjcAlogorithm.h; sourceTree = "<group>"; };
 		1343270C254969B30009B1A2 /* ObjcAlogorithm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjcAlogorithm.m; sourceTree = "<group>"; };
+		1349252B255938F500ED530D /* 11Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 11Month.swift; sourceTree = "<group>"; };
 		1353623C253D80BA0058B31A /* 算法demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "算法demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1353623F253D80BA0058B31A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13536241253D80BA0058B31A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +41,7 @@
 		1353624D253D80BC0058B31A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		138749D7255160DF0050795E /* ViewController+Extension1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension1.swift"; sourceTree = "<group>"; };
 		138749DA255258470050795E /* ViewController+Extension2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ViewController+Extension2.swift"; path = "Assets.xcassets/ViewController+Extension2.swift"; sourceTree = "<group>"; };
+		13BC6C1D2578EF2D005B2BA9 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +55,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		131A05182563C33100FBB429 /* 链表 */ = {
+			isa = PBXGroup;
+			children = (
+				131A05192563C35000FBB429 /* Lianbiao.swift */,
+			);
+			path = "链表";
+			sourceTree = "<group>";
+		};
+		1349252A255938DE00ED530D /* 11月 */ = {
+			isa = PBXGroup;
+			children = (
+				1349252B255938F500ED530D /* 11Month.swift */,
+			);
+			path = "11月";
+			sourceTree = "<group>";
+		};
 		13536233253D80BA0058B31A = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +90,9 @@
 		1353623E253D80BA0058B31A /* 算法demo */ = {
 			isa = PBXGroup;
 			children = (
+				13BC6C1C2578EF1A005B2BA9 /* 树 */,
+				131A05182563C33100FBB429 /* 链表 */,
+				1349252A255938DE00ED530D /* 11月 */,
 				1353623F253D80BA0058B31A /* AppDelegate.swift */,
 				13536241253D80BA0058B31A /* SceneDelegate.swift */,
 				13536243253D80BA0058B31A /* ViewController.swift */,
@@ -84,6 +109,14 @@
 				1343270A254969B30009B1A2 /* 算法demo-Bridging-Header.h */,
 			);
 			path = "算法demo";
+			sourceTree = "<group>";
+		};
+		13BC6C1C2578EF1A005B2BA9 /* 树 */ = {
+			isa = PBXGroup;
+			children = (
+				13BC6C1D2578EF2D005B2BA9 /* Tree.swift */,
+			);
+			path = "树";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,10 +194,13 @@
 				13536244253D80BA0058B31A /* ViewController.swift in Sources */,
 				13536240253D80BA0058B31A /* AppDelegate.swift in Sources */,
 				13432708254966270009B1A2 /* AlogorithmModel+Base.swift in Sources */,
+				1349252C255938F500ED530D /* 11Month.swift in Sources */,
 				138749DB255258470050795E /* ViewController+Extension2.swift in Sources */,
 				1343270D254969B30009B1A2 /* ObjcAlogorithm.m in Sources */,
+				13BC6C1E2578EF2D005B2BA9 /* Tree.swift in Sources */,
 				13536242253D80BA0058B31A /* SceneDelegate.swift in Sources */,
 				138749D8255160DF0050795E /* ViewController+Extension1.swift in Sources */,
+				131A051A2563C35000FBB429 /* Lianbiao.swift in Sources */,
 				1343227A254814B50009B1A2 /* AlogorithmModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

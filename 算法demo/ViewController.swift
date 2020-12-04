@@ -43,21 +43,40 @@ class ViewController: UIViewController {
 //        print("\(model.reverseLeftWords("abcdefg", 2))")
         
 //        print("\(model.baserQuickSort())")
-        
+//
 //        let node1 = ListNode(1)
 //        let node2 = ListNode(2)
 //        let node3 = ListNode(3)
+//        let node4 = ListNode(4)
+//        let node5 = ListNode(5)
 //
 //        node1.next = node2
 //        node2.next = node3
-//
-//        let pre = reverseList(node1)
-//        print(pre)
+//        node3.next = node4
+//        node4.next = node5
         
-//        print("\(validMountainArray([0,1,2,3,4,5,6,7,8,9]))")
-        let list = [1,2,3,4,5, 6 , 7 , 8 ,9, 10, 11]
-        dealListToTwoSubList(list: list)
+//        let node1 = ListNode(1)
+//        let node2 = ListNode(2)
+//        let node3 = ListNode(4)
+//        node1.next = node2
+//        node2.next = node3
+//
+//
+//        let snode1 = ListNode(1)
+//        let snode2 = ListNode(3)
+//        let snode3 = ListNode(4)
+//        snode1.next = snode2
+//        snode2.next = snode3
+//
+//        let result = mergeTwoLists(node1, snode1)
+//        print("\(result)")
+        
+        
+        let tree = Tree()
+        let new = tree.serialization(list: [62,58,88,47,73,99,35,51,93,29,37,49,56,36,48,50])
+        print("\(new)")
     }
+    
     
     /*/
      剑指 Offer 24. 反转链表
