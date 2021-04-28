@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1304B3B825A6BC22003755A8 /* StringMothod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1304B3B725A6BC22003755A8 /* StringMothod.swift */; };
 		131A051A2563C35000FBB429 /* Lianbiao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131A05192563C35000FBB429 /* Lianbiao.swift */; };
 		1343227A254814B50009B1A2 /* AlogorithmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13432279254814B50009B1A2 /* AlogorithmModel.swift */; };
 		13432708254966270009B1A2 /* AlogorithmModel+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13432707254966270009B1A2 /* AlogorithmModel+Base.swift */; };
@@ -18,12 +19,14 @@
 		13536247253D80BA0058B31A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13536245253D80BA0058B31A /* Main.storyboard */; };
 		13536249253D80BC0058B31A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13536248253D80BC0058B31A /* Assets.xcassets */; };
 		1353624C253D80BC0058B31A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1353624A253D80BC0058B31A /* LaunchScreen.storyboard */; };
+		136A313A25EFE60400E2B812 /* Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = 136A313925EFE60400E2B812 /* Sort.m */; };
 		138749D8255160DF0050795E /* ViewController+Extension1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138749D7255160DF0050795E /* ViewController+Extension1.swift */; };
 		138749DB255258470050795E /* ViewController+Extension2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138749DA255258470050795E /* ViewController+Extension2.swift */; };
 		13BC6C1E2578EF2D005B2BA9 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC6C1D2578EF2D005B2BA9 /* Tree.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1304B3B725A6BC22003755A8 /* StringMothod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringMothod.swift; sourceTree = "<group>"; };
 		131A05192563C35000FBB429 /* Lianbiao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lianbiao.swift; sourceTree = "<group>"; };
 		13432279254814B50009B1A2 /* AlogorithmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlogorithmModel.swift; sourceTree = "<group>"; };
 		13432707254966270009B1A2 /* AlogorithmModel+Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlogorithmModel+Base.swift"; sourceTree = "<group>"; };
@@ -39,6 +42,8 @@
 		13536248253D80BC0058B31A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1353624B253D80BC0058B31A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1353624D253D80BC0058B31A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		136A313825EFE60400E2B812 /* Sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sort.h; sourceTree = "<group>"; };
+		136A313925EFE60400E2B812 /* Sort.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sort.m; sourceTree = "<group>"; };
 		138749D7255160DF0050795E /* ViewController+Extension1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension1.swift"; sourceTree = "<group>"; };
 		138749DA255258470050795E /* ViewController+Extension2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ViewController+Extension2.swift"; path = "Assets.xcassets/ViewController+Extension2.swift"; sourceTree = "<group>"; };
 		13BC6C1D2578EF2D005B2BA9 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
@@ -55,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1304B3B625A6BC10003755A8 /* 字符串 */ = {
+			isa = PBXGroup;
+			children = (
+				1304B3B725A6BC22003755A8 /* StringMothod.swift */,
+			);
+			path = "字符串";
+			sourceTree = "<group>";
+		};
 		131A05182563C33100FBB429 /* 链表 */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +103,8 @@
 		1353623E253D80BA0058B31A /* 算法demo */ = {
 			isa = PBXGroup;
 			children = (
+				136A313325EFE57B00E2B812 /* 排序 */,
+				1304B3B625A6BC10003755A8 /* 字符串 */,
 				13BC6C1C2578EF1A005B2BA9 /* 树 */,
 				131A05182563C33100FBB429 /* 链表 */,
 				1349252A255938DE00ED530D /* 11月 */,
@@ -109,6 +124,15 @@
 				1343270A254969B30009B1A2 /* 算法demo-Bridging-Header.h */,
 			);
 			path = "算法demo";
+			sourceTree = "<group>";
+		};
+		136A313325EFE57B00E2B812 /* 排序 */ = {
+			isa = PBXGroup;
+			children = (
+				136A313825EFE60400E2B812 /* Sort.h */,
+				136A313925EFE60400E2B812 /* Sort.m */,
+			);
+			path = "排序";
 			sourceTree = "<group>";
 		};
 		13BC6C1C2578EF1A005B2BA9 /* 树 */ = {
@@ -191,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				136A313A25EFE60400E2B812 /* Sort.m in Sources */,
 				13536244253D80BA0058B31A /* ViewController.swift in Sources */,
 				13536240253D80BA0058B31A /* AppDelegate.swift in Sources */,
 				13432708254966270009B1A2 /* AlogorithmModel+Base.swift in Sources */,
@@ -198,6 +223,7 @@
 				138749DB255258470050795E /* ViewController+Extension2.swift in Sources */,
 				1343270D254969B30009B1A2 /* ObjcAlogorithm.m in Sources */,
 				13BC6C1E2578EF2D005B2BA9 /* Tree.swift in Sources */,
+				1304B3B825A6BC22003755A8 /* StringMothod.swift in Sources */,
 				13536242253D80BA0058B31A /* SceneDelegate.swift in Sources */,
 				138749D8255160DF0050795E /* ViewController+Extension1.swift in Sources */,
 				131A051A2563C35000FBB429 /* Lianbiao.swift in Sources */,

@@ -63,8 +63,8 @@ class ViewController: UIViewController {
 //
 //
 //        let snode1 = ListNode(1)
-//        let snode2 = ListNode(3)
-//        let snode3 = ListNode(4)
+//        let snode2 = ListNode(2)
+//        let snode3 = ListNode(3)
 //        snode1.next = snode2
 //        snode2.next = snode3
 //
@@ -72,9 +72,30 @@ class ViewController: UIViewController {
 //        print("\(result)")
         
         
-        let tree = Tree()
-        let new = tree.serialization(list: [62,58,88,47,73,99,35,51,93,29,37,49,56,36,48,50])
-        print("\(new)")
+//        let tree = Tree()
+//        let new = tree.serialization(list: [62,58,88,47,73,99,35,51,93,29,37,49,56,36,48,50])
+//        print("\(new)")
+        
+//        let ss = fanZhuanLianBiao(head: snode1)
+        
+//        var list: [Character] = ["a", "b", "c"]
+//        reverseString(&list)
+//        print("\(list)")
+        
+//        var num1 = [1,2,3,0,0,0]
+//        var num2 = [2,5,6]
+//        merge(&num1, 3, num2, 3)
+        
+//        findMedianSortedArrays([1, 2], [3, 4])
+        
+//        var l1 = ListNode(1)
+//        l1.next = ListNode(2)
+//        l1.next?.next = ListNode(4)
+        var l1 = ListNode(2)
+        
+        var l2 = ListNode(1)
+        
+        mergeTwoLists(l1, l2)
     }
     
     
@@ -104,22 +125,15 @@ class ViewController: UIViewController {
     //    }
     
     func reverseList(_ head: ListNode?) -> ListNode? {
-        var list: [ListNode] = []
-        var header = head
-        while header != nil {
-            list.append(header!)
-            header = header?.next
+        var pre: ListNode? = nil
+        var cur = head
+        while cur != nil {
+            let next = cur?.next
+            cur?.next = pre
+            pre = cur
+            cur = next
         }
-        
-        let res = list.last
-        var tem = res
-        while list.count > 0 {
-            list.removeLast()
-            tem?.next = list.last
-            tem = tem?.next
-        }
-        
-        return res
+        return pre
     }
     
     /*
@@ -185,3 +199,58 @@ extension ViewController {
     }
 }
 
+
+extension ViewController {
+    func mergeTwoLists(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+        if l1 == nil { return l2 }
+        if l2 == nil { return l1 }
+
+        if l1?.val ?? 0 <= l2?.val ?? 0 {
+            l1?.next = mergeTwoLists(l1?.next, l2)
+            return l1
+        } else {
+            l2?.next = mergeTwoLists(l1, l2?.next)
+            return l2
+        }
+    }
+    
+//    func mergeTwoLists(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+//        if l1 == nil { return l2 }
+//        if l2 == nil { return l1 }
+//
+//        var k1 = l1
+//        var k2 = l2
+//
+//        //找到头结点
+//        var header: ListNode? = nil
+//        if k1?.val ?? 0 <= k2?.val ?? 0 {
+//            header = k1
+//            k1 = k1?.next
+//        } else {
+//            header = k2
+//            k2 = k2?.next
+//        }
+//
+//        //逐个比较
+//        var cur = header
+//        while(k1 != nil && k2 != nil) {
+//            if k1!.val <= k2!.val {
+//                cur?.next = k1
+//                cur = cur?.next
+//                k1 = k1?.next
+//            } else {
+//                cur?.next = k2
+//                cur = cur?.next
+//                k2 = k2?.next
+//            }
+//        }
+//
+//        if k1 == nil {
+//            cur?.next = k2
+//        } else if k2 == nil {
+//            cur?.next = k1
+//        }
+//
+//        return header
+//    }
+}
