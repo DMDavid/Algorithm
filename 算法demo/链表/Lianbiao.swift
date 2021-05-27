@@ -7,30 +7,29 @@
 //
 
 extension ViewController {
-    /*
-     反转链表
+    /*/
+     剑指 Offer 24. 反转链表
+     定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。
+
+     示例:
+
+     输入: 1->2->3->4->5->NULL
+     输出: 5->4->3->2->1->NULL
+
+     来源：力扣（LeetCode）
+     链接：https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof
+     著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
      */
-    func fanZhuanLianBiao(head: ListNode?) -> ListNode? {
-//        var cur: ListNode? = nil
-//        var pre: ListNode? = head
-//        while pre != nil {
-//            let targetNextNode = pre?.next
-//
-//            pre?.next = cur
-//            cur = pre
-//            pre = targetNextNode
-//        }
-//        return cur
-        
-        if head == nil { return nil }
+    func reverseList(_ head: ListNode?) -> ListNode? {
+        var pre: ListNode? = nil
         var cur = head
-        while (head?.next != nil) {
-            let t = head?.next?.next
-            head?.next?.next = cur
-            cur = head?.next
-            head?.next = t
+        while cur != nil {
+            let next = cur?.next
+            cur?.next = pre
+            pre = cur
+            cur = next
         }
-        return cur   
+        return pre
     }
 }
 
@@ -188,3 +187,122 @@ extension ViewController {
 //        }
 //    }
 //}
+
+
+/*
+ 请判断一个链表是否为回文链表。
+
+ 示例 1:
+
+ 输入: 1->2
+ 输出: false
+ 示例 2:
+
+ 输入: 1->2->2->1
+ 输出: true
+ 进阶：
+ 你能否用 O(n) 时间复杂度和 O(1) 空间复杂度解决此题？
+
+ 来源：力扣（LeetCode）
+ 链接：https://leetcode-cn.com/problems/palindrome-linked-list
+ 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ */
+extension ViewController {
+    func test2() {
+        
+        let model = Solution()
+        
+        let one = ListNode(1)
+        let two = ListNode(-2)
+        let three1 = ListNode(3)
+        
+        let three2 = ListNode(6)
+        let three3 = ListNode(6)
+        
+        let three4 = ListNode(3)
+        let three = ListNode(-2)
+        let four = ListNode(1)
+        
+        one.next = two
+        two.next = three1
+        three1.next = three2
+        three2.next = three3
+        three3.next = three4
+        three4.next = three
+        three.next = four
+        
+        //        let one = ListNode(1)
+        //        let two = ListNode(2)
+        //        one.next = two
+        
+        //        print("\(model.isPalindrome(one))")
+        
+        print("\(isPalindrome(one))")
+    }
+    
+    // 遍历，中分，反转一个list，两个list比较
+    class Solution {
+        func isPalindrome(_ head: ListNode?) -> Bool {
+            guard let testHeader = head else { return true }
+            
+            var list:[Int] = []
+            var temHeader: ListNode?
+            
+            temHeader = testHeader
+            list.append(testHeader.val)
+            
+            while temHeader != nil {
+                temHeader = temHeader?.next
+                if let value = temHeader?.val {
+                    list.append(value)
+                }
+            }
+            
+            var intermediate = list.count / 2
+            guard intermediate < list.count, intermediate >= 0 else { return false }
+            let firstList: [Int] = Array(list.prefix(intermediate))
+            var lastList: [Int] = Array(list.suffix(intermediate))
+            
+            let newLastList = Array(lastList.reversed())
+            
+            if firstList.count != newLastList.count, firstList != newLastList { return false }
+            for (index, item) in firstList.enumerated() {
+                let value = newLastList[index]
+                if value != item {
+                    return false
+                }
+            }
+            
+            return true
+        }
+    }
+
+        //快慢指针
+    func isPalindrome(_ l1: ListNode?) -> Bool {
+        if l1 == nil || l1?.next == nil {
+            return false
+        }
+        
+        var fast = l1
+        var slow = l1
+        var nodeArr:[Int] = [Int]()
+        nodeArr.append(l1!.val)
+        while fast?.next != nil && fast?.next?.next != nil {
+            slow = slow?.next
+            fast = fast?.next?.next
+            nodeArr.append(slow!.val)
+        }
+        
+        while slow?.next != nil {
+            if nodeArr.count != 0 {
+                if nodeArr.removeLast() != slow?.next?.val {
+                    return false
+                }
+            } else {
+                return false
+            }
+            slow = slow?.next
+        }
+        return true
+    }
+}
