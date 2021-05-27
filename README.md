@@ -1,4 +1,59 @@
-LeetCode 91. 解码方法
+## 704. 二分查找
+https://leetcode-cn.com/problems/binary-search/
+给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target  ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。
+示例 1:
+
+输入: nums = [-1,0,3,5,9,12], target = 9
+输出: 4
+解释: 9 出现在 nums 中并且下标为 4
+示例 2:
+
+输入: nums = [-1,0,3,5,9,12], target = 2
+输出: -1
+解释: 2 不存在 nums 中因此返回 -1
+
+    func search ( _ nums: [Int],  _ target: Int) -> Int {
+        guard nums.count > 0 else { return -1 }
+        return getNumber(0, nums.count-1, nums, target)
+    }
+    
+    func getNumber(_ left: Int, _ right: Int, _ nums: [Int], _ target: Int) -> Int {
+        if left == right {
+            if nums[left] == target {
+                return left
+            }
+            return -1
+        }
+        
+        if (right - left) == 1 {
+            if nums[left] == target {
+                return left
+            } else if nums[right] == target {
+                return right
+            } else {
+                return -1
+            }
+        }
+        
+        let middle = left + (right - left)/2
+        let currentNum = nums[middle]
+        if currentNum > target {
+            return getNumber(left, middle, nums, target)
+            
+        } else if currentNum < target {
+            return getNumber(middle, right, nums, target)
+            
+        } else if currentNum == target {
+            return middle
+        }
+
+        return -1
+    }
+
+
+
+
+## LeetCode 91. 解码方法
 https://leetcode-cn.com/problems/decode-ways/
 一条包含字母 A-Z 的消息通过以下映射进行了 编码 ：
 
