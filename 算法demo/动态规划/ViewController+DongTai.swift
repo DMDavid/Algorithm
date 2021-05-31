@@ -194,3 +194,26 @@ extension ViewController {
         return false
     }
 }
+
+/*
+ 1、给定一个Int型数组，用里面的元素组成一个最大数，因为数字可能非常大，用字符串输出。
+
+ 输入: [3,30,34,5,9]
+ 输出: 9534330
+ */
+
+extension ViewController {
+    func largestNumber(_ nums: [Int]) -> String {
+        let sort = nums.map {"\($0)"}.sorted { (lStr, rStr) -> Bool in
+            let s1 = lStr + rStr
+            let s2 = rStr + lStr
+            return lStr + rStr > rStr + lStr
+        }
+        let result = sort.joined()
+        if result.prefix(1) == "0" {
+            return "0"
+        } else {
+            return result
+        }
+    }
+}

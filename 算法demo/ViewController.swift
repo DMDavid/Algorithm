@@ -91,7 +91,9 @@ class ViewController: UIViewController {
 //        var l1 = ListNode(1)
 //        l1.next = ListNode(2)
 //        l1.next?.next = ListNode(4)
-        print("\(search([1,2,2,3,4],2))")
+//        print("\(search([1,2,2,3,4],2))")
+        
+        print("\(largestNumber([3,30,34,5,9]))")
     }
 }
 

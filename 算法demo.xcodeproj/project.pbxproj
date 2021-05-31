@@ -22,8 +22,10 @@
 		138749D8255160DF0050795E /* ViewController+Extension1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138749D7255160DF0050795E /* ViewController+Extension1.swift */; };
 		138749DB255258470050795E /* ViewController+Extension2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138749DA255258470050795E /* ViewController+Extension2.swift */; };
 		13BC6C1E2578EF2D005B2BA9 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC6C1D2578EF2D005B2BA9 /* Tree.swift */; };
+		D03A875C2664D5AA00F56D3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A875B2664D5AA00F56D3F /* SceneDelegate.swift */; };
 		D0A3A768265FAAF5006B5848 /* ViewController+ErFen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3A767265FAAF5006B5848 /* ViewController+ErFen.swift */; };
 		D0A3A76B265FAD26006B5848 /* ViewController+DongTai.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3A76A265FAD26006B5848 /* ViewController+DongTai.swift */; };
+		D0B903CA26609DC2002E7A28 /* ViewController+Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B903C926609DC2002E7A28 /* ViewController+Hash.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,8 +49,10 @@
 		138749D7255160DF0050795E /* ViewController+Extension1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension1.swift"; sourceTree = "<group>"; };
 		138749DA255258470050795E /* ViewController+Extension2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ViewController+Extension2.swift"; path = "Assets.xcassets/ViewController+Extension2.swift"; sourceTree = "<group>"; };
 		13BC6C1D2578EF2D005B2BA9 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		D03A875B2664D5AA00F56D3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D0A3A767265FAAF5006B5848 /* ViewController+ErFen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+ErFen.swift"; sourceTree = "<group>"; };
 		D0A3A76A265FAD26006B5848 /* ViewController+DongTai.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+DongTai.swift"; sourceTree = "<group>"; };
+		D0B903C926609DC2002E7A28 /* ViewController+Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Hash.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 		1353623E253D80BA0058B31A /* 算法demo */ = {
 			isa = PBXGroup;
 			children = (
+				D0B903C826609DB1002E7A28 /* 哈希 */,
 				D0A3A769265FAD00006B5848 /* 动态规划 */,
 				D0A3A764265FAA9E006B5848 /* 二分法 */,
 				136A313325EFE57B00E2B812 /* 排序 */,
@@ -118,6 +123,7 @@
 				138749DA255258470050795E /* ViewController+Extension2.swift */,
 				13432279254814B50009B1A2 /* AlogorithmModel.swift */,
 				13432707254966270009B1A2 /* AlogorithmModel+Base.swift */,
+				D03A875B2664D5AA00F56D3F /* SceneDelegate.swift */,
 				13536245253D80BA0058B31A /* Main.storyboard */,
 				13536248253D80BC0058B31A /* Assets.xcassets */,
 				1353624A253D80BC0058B31A /* LaunchScreen.storyboard */,
@@ -160,6 +166,14 @@
 				D0A3A76A265FAD26006B5848 /* ViewController+DongTai.swift */,
 			);
 			path = "动态规划";
+			sourceTree = "<group>";
+		};
+		D0B903C826609DB1002E7A28 /* 哈希 */ = {
+			isa = PBXGroup;
+			children = (
+				D0B903C926609DC2002E7A28 /* ViewController+Hash.swift */,
+			);
+			path = "哈希";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,8 +253,10 @@
 				13536240253D80BA0058B31A /* AppDelegate.swift in Sources */,
 				13432708254966270009B1A2 /* AlogorithmModel+Base.swift in Sources */,
 				1349252C255938F500ED530D /* 11Month.swift in Sources */,
+				D03A875C2664D5AA00F56D3F /* SceneDelegate.swift in Sources */,
 				D0A3A76B265FAD26006B5848 /* ViewController+DongTai.swift in Sources */,
 				138749DB255258470050795E /* ViewController+Extension2.swift in Sources */,
+				D0B903CA26609DC2002E7A28 /* ViewController+Hash.swift in Sources */,
 				1343270D254969B30009B1A2 /* ObjcAlogorithm.m in Sources */,
 				13BC6C1E2578EF2D005B2BA9 /* Tree.swift in Sources */,
 				1304B3B825A6BC22003755A8 /* StringMothod.swift in Sources */,
@@ -403,7 +419,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "算法demo/算法demo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -422,7 +438,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "算法demo/算法demo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
