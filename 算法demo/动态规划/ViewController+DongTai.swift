@@ -217,3 +217,86 @@ extension ViewController {
         }
     }
 }
+
+extension ViewController {
+    // 广度
+    func bfs(node: Tree_node) -> [Int] {
+        var queue = [Tree_node]()
+        queue.append(node)
+        var list = [Int]()
+        while !queue.isEmpty {
+            let targetNode = queue.first
+            queue.removeFirst()
+            
+            if let value = targetNode?.value {
+                list.append(value)
+            }
+            
+            if let leftNode = targetNode?.left_node {
+                queue.append(leftNode)
+            }
+            if let rightNode = targetNode?.right_node {
+                queue.append(rightNode)
+            }
+        }
+        
+        return list
+    }
+    
+    /**
+     * leetcdoe 102: 二叉树的层序遍历, 使用 bfs
+     * [1]
+     *  [2, 3]
+     *  [4 , 5 , 6]
+     * @param root
+     */
+    func bfsTest1(node: Tree_node) -> [[Int]] {
+        var queue = [Tree_node]()
+        queue.append(node)
+        var list = [[Int]]()
+        
+        while !queue.isEmpty {
+            var level = [Int]()
+            var count = queue.count
+            
+            for _ in 0..<count {
+                let targetNode = queue.first
+                queue.removeFirst()
+                
+                if let leftNode = targetNode?.left_node {
+                    queue.append(leftNode)
+                }
+                if let rightNode = targetNode?.right_node {
+                    queue.append(rightNode)
+                }
+                
+                if let value = targetNode?.value {
+                    level.append(value)
+                }
+            }
+            list.append(level)
+        }
+        
+        return list
+    }
+    
+    // 深度
+    func dfs(node: Tree_node?) -> [Int] {
+        var result = [Int]()
+        if node == nil {
+            return result
+        }
+        
+        if let leftNodeValue = node?.value {
+            result.append(leftNodeValue)
+        }
+        
+        let leftList = dfs(node: node?.left_node)
+        result.append(contentsOf: leftList)
+        
+        let rightList = dfs(node: node?.right_node)
+        result.append(contentsOf: rightList)
+        
+        return result
+    }
+}

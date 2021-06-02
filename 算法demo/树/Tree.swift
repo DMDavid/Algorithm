@@ -69,3 +69,45 @@ class Tree: NSObject {
         }
     }
 }
+
+/**
+ * leetcode 104: 求树的最大深度
+ * @param node
+ * @return
+ */
+extension ViewController {
+    func maxDepth(_ root: Tree_node?) -> Int {
+        if root == nil {
+            return 0
+        }
+        
+        var leftDepth = maxDepth(root?.left_node)
+        var rightDepth = maxDepth(root?.right_node)
+        return max(leftDepth, rightDepth)
+    }
+}
+
+/**
+ * leetcode 111: 求树的最小深度
+ * @param node
+ * @return
+ */
+extension ViewController {
+    func minDepth(_ root: Tree_node?) -> Int {
+        if (root == nil) {
+            return 0
+        }
+
+        if (root?.left_node == nil) {
+            return 1 + minDepth(root?.right_node)
+        }
+
+        if (root?.right_node == nil) {
+            return 1 + minDepth(root?.left_node)
+        }
+
+        var leftDepth = minDepth(root?.left_node);
+        var rightDepth = minDepth(root?.right_node);
+        return 1 + min(leftDepth, rightDepth)
+    }
+}
