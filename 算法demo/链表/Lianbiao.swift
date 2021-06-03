@@ -240,6 +240,10 @@ extension ViewController {
         print("\(isPalindrome(one))")
     }
     
+    //1. 放入数组，然后比较
+    
+    //2. 快慢指针，平分，
+    // 翻转后面的链表，然后比较 **
     // 遍历，中分，反转一个list，两个list比较
     class Solution {
         func isPalindrome(_ head: ListNode?) -> Bool {
@@ -305,4 +309,12 @@ extension ViewController {
         }
         return true
     }
+    
+
+//    //! 双向链表 -> 删除 自身
+//    func removeOneNode(_ node: Tree_node) {
+//      node.next!.prev = node.prev
+//      node.prev!.next = node.next
+//    }
+    
 }

@@ -2,7 +2,7 @@
 //  File.swift
 //  算法demo
 //
-//  Created by ctrip on 2021/5/27.
+//  Created by dumeng on 2021/5/27.
 //  Copyright © 2021 dumeng. All rights reserved.
 //
 
@@ -12,6 +12,9 @@ extension ViewController {
         return getNumber(0, nums.count-1, nums, target)
     }
 
+    //二分
+    //left = 0, right = count -1
+    // mid = (right - left)/2 + left
     func getNumber(_ left: Int, _ right: Int, _ nums: [Int], _ target: Int) -> Int {
         if left == right {
             if nums[left] == target {

@@ -7,6 +7,7 @@
 //
 
 extension ViewController {
+    //反转字符串
     func reverseString(_ s: inout [Character]) {
         let totalCount = s.count
         var left = 0

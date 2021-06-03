@@ -22,6 +22,7 @@
 		138749D8255160DF0050795E /* ViewController+Extension1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138749D7255160DF0050795E /* ViewController+Extension1.swift */; };
 		138749DB255258470050795E /* ViewController+Extension2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138749DA255258470050795E /* ViewController+Extension2.swift */; };
 		13BC6C1E2578EF2D005B2BA9 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC6C1D2578EF2D005B2BA9 /* Tree.swift */; };
+		D00F198A26687565005B6F0F /* ViewController+LRU.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F198926687565005B6F0F /* ViewController+LRU.swift */; };
 		D03A875C2664D5AA00F56D3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A875B2664D5AA00F56D3F /* SceneDelegate.swift */; };
 		D0A3A768265FAAF5006B5848 /* ViewController+ErFen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3A767265FAAF5006B5848 /* ViewController+ErFen.swift */; };
 		D0A3A76B265FAD26006B5848 /* ViewController+DongTai.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3A76A265FAD26006B5848 /* ViewController+DongTai.swift */; };
@@ -49,6 +50,7 @@
 		138749D7255160DF0050795E /* ViewController+Extension1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension1.swift"; sourceTree = "<group>"; };
 		138749DA255258470050795E /* ViewController+Extension2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ViewController+Extension2.swift"; path = "Assets.xcassets/ViewController+Extension2.swift"; sourceTree = "<group>"; };
 		13BC6C1D2578EF2D005B2BA9 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		D00F198926687565005B6F0F /* ViewController+LRU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+LRU.swift"; sourceTree = "<group>"; };
 		D03A875B2664D5AA00F56D3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D0A3A767265FAAF5006B5848 /* ViewController+ErFen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+ErFen.swift"; sourceTree = "<group>"; };
 		D0A3A76A265FAD26006B5848 /* ViewController+DongTai.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+DongTai.swift"; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		1353623E253D80BA0058B31A /* 算法demo */ = {
 			isa = PBXGroup;
 			children = (
+				D00F198826687555005B6F0F /* LRU */,
 				D0B903C826609DB1002E7A28 /* 哈希 */,
 				D0A3A769265FAD00006B5848 /* 动态规划 */,
 				D0A3A764265FAA9E006B5848 /* 二分法 */,
@@ -150,6 +153,14 @@
 				13BC6C1D2578EF2D005B2BA9 /* Tree.swift */,
 			);
 			path = "树";
+			sourceTree = "<group>";
+		};
+		D00F198826687555005B6F0F /* LRU */ = {
+			isa = PBXGroup;
+			children = (
+				D00F198926687565005B6F0F /* ViewController+LRU.swift */,
+			);
+			path = LRU;
 			sourceTree = "<group>";
 		};
 		D0A3A764265FAA9E006B5848 /* 二分法 */ = {
@@ -248,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D00F198A26687565005B6F0F /* ViewController+LRU.swift in Sources */,
 				136A313A25EFE60400E2B812 /* Sort.m in Sources */,
 				13536244253D80BA0058B31A /* ViewController.swift in Sources */,
 				13536240253D80BA0058B31A /* AppDelegate.swift in Sources */,
