@@ -94,21 +94,23 @@ class ViewController: UIViewController {
 //        print("\(search([1,2,2,3,4],2))")
         
         
-        let node4 = Tree_node(4, left: nil, right: nil)
-        let node7 = Tree_node(7, left: nil, right: nil)
-        let node5 = Tree_node(5, left: node7, right: nil)
-        let node2 = Tree_node(2, left: node4, right: node5)
+//        let node4 = Tree_node(4, left: nil, right: nil)
+//        let node7 = Tree_node(7, left: nil, right: nil)
+//        let node5 = Tree_node(5, left: node7, right: nil)
+//        let node2 = Tree_node(2, left: node4, right: node5)
+//
+//        let node6 = Tree_node(6, left: Tree_node(8, left: nil, right: nil), right: Tree_node(9, left: nil, right: nil))
+//        let node3 = Tree_node(3, left: nil, right: node6)
+//
+//        let snode1 = Tree_node(1, left: node2, right: node3)
+//
+//        print("\(bfs(node: snode1))")
+//
+//        print("\(dfs(node: snode1))")
+//
+//        print("\(bfsTest1(node: snode1))")
         
-        let node6 = Tree_node(6, left: Tree_node(8, left: nil, right: nil), right: Tree_node(9, left: nil, right: nil))
-        let node3 = Tree_node(3, left: nil, right: node6)
-        
-        let snode1 = Tree_node(1, left: node2, right: node3)
-        
-        print("\(bfs(node: snode1))")
-        
-        print("\(dfs(node: snode1))")
-        
-        print("\(bfsTest1(node: snode1))")
+        print("\(reverse(-123))")
     }
 }
 

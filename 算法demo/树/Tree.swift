@@ -81,8 +81,8 @@ extension ViewController {
             return 0
         }
         
-        var leftDepth = maxDepth(root?.left_node)
-        var rightDepth = maxDepth(root?.right_node)
+        var leftDepth = maxDepth(root?.left_node) + 1
+        var rightDepth = maxDepth(root?.right_node) + 1
         return max(leftDepth, rightDepth)
     }
 }

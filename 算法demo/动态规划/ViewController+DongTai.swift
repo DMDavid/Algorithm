@@ -287,8 +287,8 @@ extension ViewController {
             return result
         }
         
-        if let leftNodeValue = node?.value {
-            result.append(leftNodeValue)
+        if let value = node?.value {
+            result.append(value)
         }
         
         let leftList = dfs(node: node?.left_node)

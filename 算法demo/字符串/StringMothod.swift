@@ -22,7 +22,7 @@ extension ViewController {
         }
     }
     
-    
+    //合并有序2个数组
     func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
         guard m <= nums1.count, n <= nums2.count else {
             return
@@ -112,4 +112,36 @@ extension ViewController {
             return Double(lastValue)
         }
     }
+}
+
+extension ViewController {
+    func reverse(_ x: Int) -> Int {
+        var result = 0
+        var digit = x
+        
+        while digit != 0 {
+            let end = digit % 10
+            result = result * 10 + end
+            digit = digit/10
+        }
+        
+        guard (result <= INT32_MAX && result >= -INT32_MAX - 1) else {
+            return 0
+        }
+        
+        return result
+    }
+}
+
+/*
+ 9. 回文数
+ 给你一个整数 x ，如果 x 是一个回文整数，返回 true ；否则，返回 false 。
+
+ 回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。例如，121 是回文，而 123 不是。
+ */
+extension ViewController {
+//    func isPalindrome(_ x: Int) -> Bool {
+//        var list = Array(arrayLiteral: x)
+//        
+//    }
 }
