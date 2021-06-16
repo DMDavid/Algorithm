@@ -8,6 +8,73 @@
 
 import UIKit
 
+//class LRUCache: NSObject {
+//    //哈希表
+//    var map = [Int: Tree_node]()
+//    //最大容量
+//    var capacity = 0
+//    //最前面node
+//    var fristNode = Tree_node(0, left: nil, right: nil)
+//    var lastNode = Tree_node(0, left: nil, right: nil)
+//
+//    init(_ capacity: Int) {
+//        self.capacity = capacity
+//
+//        fristNode.right_node = lastNode
+//        lastNode.left_node = fristNode
+//    }
+//
+//    //获取
+//    func get(_ key: Int) -> Int {
+//        guard let node = map[key] else { return -1 }
+//
+//        //更新
+//        removeNode(node: node)
+//        addAtFristNode(node: node)
+//
+//        return node.value
+//    }
+//
+//    //存放
+//    func put(_ key: Int, _ value: Int) {
+//        if let node = map[key] {
+//            node.value = value
+//            map[key] = node
+//
+//            removeNode(node: node)
+//            addAtFristNode(node: node)
+//        } else {
+//
+//            if map.keys.count == self.capacity {
+//                map.removeValue(forKey: key)
+//
+//                //
+//                removeNode(node: )
+//            }
+//
+//            let newNode = Tree_node(value, left: fristNode, right: fristNode.right_node)
+//        }
+//
+//    }
+//
+//    //双向链表‘
+//    //删除
+//    func removeNode(node: Tree_node) {
+//        node.right_node?.left_node = node.left_node
+//        node.left_node?.right_node = node.right_node
+//    }
+//
+//    //添加到第一个
+//    func addAtFristNode(node: Tree_node) {
+//        node.right_node = fristNode.right_node
+//        node.right_node?.left_node = node
+//
+//        fristNode.right_node = node
+//        node.left_node = fristNode
+//    }
+//
+//}
+
 extension ViewController {
 //    class LRUCache {
 //        var map : [Int: Tree_node]!

@@ -29,7 +29,9 @@ extension ViewController {
     func fib(_ n: Int) -> Int {
         guard n > 1 else { return n }
         
-        var a = 0, b = 1, sum = 0
+        var sum = 0
+        var a = 0
+        var b = 1
         for _ in 0..<n {
             sum = (a + b) % 1000000007
             a = b
@@ -37,6 +39,59 @@ extension ViewController {
         }
         return a
     }
+}
+
+extension ViewController {
+    /*
+     70. 爬楼梯
+     假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
+
+     每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
+
+     注意：给定 n 是一个正整数。
+
+     示例 1：
+
+     输入： 2
+     输出： 2
+     解释： 有两种方法可以爬到楼顶。
+     1.  1 阶 + 1 阶
+     2.  2 阶
+     示例 2：
+
+     输入： 3
+     输出： 3
+     解释： 有三种方法可以爬到楼顶。
+     1.  1 阶 + 1 阶 + 1 阶
+     2.  1 阶 + 2 阶
+     3.  2 阶 + 1 阶
+     */
+    func climbStairs(_ n: Int) -> Int {
+        if n <= 1 {
+            return 1
+        } else if n == 2 {
+            return 2
+        }
+        // var dp = Array(repeating: 0, count: n+1)
+        // dp[0] = 1
+        // dp[1] = 1
+        // dp[2] = 2
+        // for i in 3...n {
+        //     dp[i] = dp[i-1]+dp[i-2]
+        // }
+        // print(dp)
+        // return dp[n]
+
+        var num = 0
+        var num1 = 1
+        var num2 = 2
+        for _ in 3...n {
+            num = num1 + num2
+            num1 = num2
+            num2 = num
+        }
+    return num
+}
 }
 
 extension ViewController {
@@ -195,14 +250,13 @@ extension ViewController {
     }
 }
 
-/*
- 1、给定一个Int型数组，用里面的元素组成一个最大数，因为数字可能非常大，用字符串输出。
-
- 输入: [3,30,34,5,9]
- 输出: 9534330
- */
-
 extension ViewController {
+    /*
+     1、给定一个Int型数组，用里面的元素组成一个最大数，因为数字可能非常大，用字符串输出。
+
+     输入: [3,30,34,5,9]
+     输出: 9534330
+     */
     func largestNumber(_ nums: [Int]) -> String {
         let sort = nums.map {"\($0)"}.sorted { (lStr, rStr) -> Bool in
             let s1 = lStr + rStr
@@ -215,88 +269,5 @@ extension ViewController {
         } else {
             return result
         }
-    }
-}
-
-extension ViewController {
-    // 广度
-    func bfs(node: Tree_node) -> [Int] {
-        var queue = [Tree_node]()
-        queue.append(node)
-        var list = [Int]()
-        while !queue.isEmpty {
-            let targetNode = queue.first
-            queue.removeFirst()
-            
-            if let value = targetNode?.value {
-                list.append(value)
-            }
-            
-            if let leftNode = targetNode?.left_node {
-                queue.append(leftNode)
-            }
-            if let rightNode = targetNode?.right_node {
-                queue.append(rightNode)
-            }
-        }
-        
-        return list
-    }
-    
-    /**
-     * leetcdoe 102: 二叉树的层序遍历, 使用 bfs
-     * [1]
-     *  [2, 3]
-     *  [4 , 5 , 6]
-     * @param root
-     */
-    func bfsTest1(node: Tree_node) -> [[Int]] {
-        var queue = [Tree_node]()
-        queue.append(node)
-        var list = [[Int]]()
-        
-        while !queue.isEmpty {
-            var level = [Int]()
-            var count = queue.count
-            
-            for _ in 0..<count {
-                let targetNode = queue.first
-                queue.removeFirst()
-                
-                if let leftNode = targetNode?.left_node {
-                    queue.append(leftNode)
-                }
-                if let rightNode = targetNode?.right_node {
-                    queue.append(rightNode)
-                }
-                
-                if let value = targetNode?.value {
-                    level.append(value)
-                }
-            }
-            list.append(level)
-        }
-        
-        return list
-    }
-    
-    // 深度
-    func dfs(node: Tree_node?) -> [Int] {
-        var result = [Int]()
-        if node == nil {
-            return result
-        }
-        
-        if let value = node?.value {
-            result.append(value)
-        }
-        
-        let leftList = dfs(node: node?.left_node)
-        result.append(contentsOf: leftList)
-        
-        let rightList = dfs(node: node?.right_node)
-        result.append(contentsOf: rightList)
-        
-        return result
     }
 }
