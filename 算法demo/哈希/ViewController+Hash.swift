@@ -60,5 +60,16 @@ extension ViewController {
             map[item] = index
         }
         return []
+        
+//        var map = [Int: Int]()
+//        for (index, item) in nums.enumerated() {
+//            var value = target - item
+//            if let mapValue = map[value] {
+//                return [mapValue, index]
+//            } else {
+//                map[item] = index
+//            }
+//        }
+//        return []
     }
 }

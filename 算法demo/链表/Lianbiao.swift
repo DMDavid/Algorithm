@@ -31,6 +31,32 @@ extension ViewController {
         }
         return pre
     }
+    
+    func rotate(_ nums: inout [Int], _ k: Int) {
+        guard k == nums.count else {
+            return
+        }
+        
+        reverse(&nums, start: 0, end: nums.count - 1)
+        guard k < nums.count else {
+            return
+        }
+        reverse(&nums, start: 0, end: (k - 1) < 0 ? 0 : k - 1)
+        reverse(&nums, start: k, end: nums.count - 1)
+    }
+    
+    func reverse(_ nums: inout [Int], start: Int, end: Int) {
+        var tStart = start;
+        var tEnd = end;
+        while tStart < tEnd {
+            var tem = nums[tStart]
+            nums[tStart] = nums[tEnd]
+            nums[tEnd] = tem
+            
+            tStart += 1
+            tEnd -= 1
+        }
+    }
 }
 
 extension ViewController {
@@ -318,3 +344,39 @@ extension ViewController {
 //    }
     
 }
+
+extension ViewController {
+    /*
+     19. 删除链表的倒数第 N 个结点
+     输入：head = [1,2,3,4,5], n = 2
+     输出：[1,2,3,5]
+     示例 2：
+
+     输入：head = [1], n = 1
+     输出：[]
+     */
+    func removeNthFromEnd(_ head: ListNode?, _ n: Int) -> ListNode? {
+        let dummy: ListNode? = ListNode(0)
+        dummy?.next = head
+        
+        var fastNode: ListNode? = dummy
+        var slowNode: ListNode? = dummy
+        
+        for _ in 0..<n {
+            fastNode = fastNode?.next
+        }
+        
+        while fastNode?.next != nil {
+            fastNode = fastNode?.next
+            slowNode = slowNode?.next
+        }
+        
+        slowNode?.next = slowNode?.next?.next
+        
+        let node = dummy?.next
+        
+        return node
+    }
+}
+
+

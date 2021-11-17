@@ -22,6 +22,7 @@
 		138749D8255160DF0050795E /* ViewController+Extension1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138749D7255160DF0050795E /* ViewController+Extension1.swift */; };
 		138749DB255258470050795E /* ViewController+Extension2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138749DA255258470050795E /* ViewController+Extension2.swift */; };
 		13BC6C1E2578EF2D005B2BA9 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC6C1D2578EF2D005B2BA9 /* Tree.swift */; };
+		31D299632716C35500882D2F /* DoublePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D299622716C35500882D2F /* DoublePoint.swift */; };
 		D00F198A26687565005B6F0F /* ViewController+LRU.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F198926687565005B6F0F /* ViewController+LRU.swift */; };
 		D03A875C2664D5AA00F56D3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A875B2664D5AA00F56D3F /* SceneDelegate.swift */; };
 		D0A3A768265FAAF5006B5848 /* ViewController+ErFen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A3A767265FAAF5006B5848 /* ViewController+ErFen.swift */; };
@@ -50,6 +51,7 @@
 		138749D7255160DF0050795E /* ViewController+Extension1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension1.swift"; sourceTree = "<group>"; };
 		138749DA255258470050795E /* ViewController+Extension2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ViewController+Extension2.swift"; path = "Assets.xcassets/ViewController+Extension2.swift"; sourceTree = "<group>"; };
 		13BC6C1D2578EF2D005B2BA9 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		31D299622716C35500882D2F /* DoublePoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublePoint.swift; sourceTree = "<group>"; };
 		D00F198926687565005B6F0F /* ViewController+LRU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+LRU.swift"; sourceTree = "<group>"; };
 		D03A875B2664D5AA00F56D3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D0A3A767265FAAF5006B5848 /* ViewController+ErFen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+ErFen.swift"; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		1353623E253D80BA0058B31A /* 算法demo */ = {
 			isa = PBXGroup;
 			children = (
+				31D299612716C33D00882D2F /* 双指针 */,
 				D00F198826687555005B6F0F /* LRU */,
 				D0B903C826609DB1002E7A28 /* 哈希 */,
 				D0A3A769265FAD00006B5848 /* 动态规划 */,
@@ -153,6 +156,14 @@
 				13BC6C1D2578EF2D005B2BA9 /* Tree.swift */,
 			);
 			path = "树";
+			sourceTree = "<group>";
+		};
+		31D299612716C33D00882D2F /* 双指针 */ = {
+			isa = PBXGroup;
+			children = (
+				31D299622716C35500882D2F /* DoublePoint.swift */,
+			);
+			path = "双指针";
 			sourceTree = "<group>";
 		};
 		D00F198826687555005B6F0F /* LRU */ = {
@@ -268,6 +279,7 @@
 				D03A875C2664D5AA00F56D3F /* SceneDelegate.swift in Sources */,
 				D0A3A76B265FAD26006B5848 /* ViewController+DongTai.swift in Sources */,
 				138749DB255258470050795E /* ViewController+Extension2.swift in Sources */,
+				31D299632716C35500882D2F /* DoublePoint.swift in Sources */,
 				D0B903CA26609DC2002E7A28 /* ViewController+Hash.swift in Sources */,
 				1343270D254969B30009B1A2 /* ObjcAlogorithm.m in Sources */,
 				13BC6C1E2578EF2D005B2BA9 /* Tree.swift in Sources */,

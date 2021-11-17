@@ -8,45 +8,61 @@
 
 extension ViewController {
     func search ( _ nums: [Int],  _ target: Int) -> Int {
-        guard nums.count > 0 else { return -1 }
-        return getNumber(0, nums.count-1, nums, target)
-    }
-
-    //二分
-    //left = 0, right = count -1
-    // mid = (right - left)/2 + left
-    func getNumber(_ left: Int, _ right: Int, _ nums: [Int], _ target: Int) -> Int {
-        if left == right {
-            if nums[left] == target {
-                return left
-            }
-            return -1
-        }
-        
-        if (right - left) == 1 {
-            if nums[left] == target {
-                return left
-            } else if nums[right] == target {
-                return right
+        var low = 0, high = nums.count - 1
+        while low <= high {
+            let mid = (high - low)/2 + low
+            let num = nums[mid]
+            if num == target {
+                return mid
+            } else if num > target {
+                high = mid - 1
             } else {
-                return -1
+                low = mid + 1
             }
         }
-        
-        let middle = left + (right - left)/2
-        let currentNum = nums[middle]
-        if currentNum > target {
-            return getNumber(left, middle, nums, target)
-            
-        } else if currentNum < target {
-            return getNumber(middle, right, nums, target)
-            
-        } else if currentNum == target {
-            return middle
-        }
-
         return -1
     }
+    
+//    func search ( _ nums: [Int],  _ target: Int) -> Int {
+//        guard nums.count > 0 else { return -1 }
+//        return getNumber(0, nums.count-1, nums, target)
+//    }
+//
+//    //二分
+//    //left = 0, right = count -1
+//    // mid = (right - left)/2 + left
+//    func getNumber(_ left: Int, _ right: Int, _ nums: [Int], _ target: Int) -> Int {
+//        if left == right {
+//            if nums[left] == target {
+//                return left
+//            }
+//            return -1
+//        }
+//
+//        if (right - left) == 1 {
+//            if nums[left] == target {
+//                return left
+//            } else if nums[right] == target {
+//                return right
+//            } else {
+//                return -1
+//            }
+//        }
+//
+//        let middle = left + (right - left)/2
+//        let currentNum = nums[middle]
+//        if currentNum > target {
+//            return getNumber(left, middle, nums, target)
+//
+//        } else if currentNum < target {
+//            return getNumber(middle, right, nums, target)
+//
+//        } else if currentNum == target {
+//            return middle
+//        }
+//
+//        return -1
+//    }
 
     
 }

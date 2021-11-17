@@ -145,3 +145,138 @@ extension ViewController {
 //        
 //    }
 }
+
+extension ViewController {
+    /*
+     3. 无重复字符的最长子串
+     给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。
+
+     示例 1:
+     输入: s = "abcabcbb"
+     输出: 3
+     解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
+     
+     示例 2:
+     输入: s = "bbbbb"
+     输出: 1
+     解释: 因为无重复字符的最长子串是 "b"，所以其长度为 1。
+     
+     示例 3:
+     输入: s = "pwwkew"
+     输出: 3
+     解释: 因为无重复字符的最长子串是 "wke"，所以其长度为 3。
+          请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。
+
+     来源：力扣（LeetCode）
+     链接：https://leetcode-cn.com/problems/longest-substring-without-repeating-characters
+     著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     */
+    func lengthOfLongestSubstring(_ s: String) -> Int {
+        // 记录出现字符串的索引
+        var map = [Character : Int]()
+        var left = 0
+        var result = 0
+        for (index, char) in s.enumerated() {
+            let preIndex = map[char] ?? -1
+            if preIndex >= left {
+                left = preIndex + 1
+            }
+            
+            let currentLength = index - left + 1
+            result = max(currentLength, result)
+            map[char] = index
+        }
+        return result
+    }
+}
+
+extension ViewController {
+    //滑动窗口
+    /*
+     567. 字符串的排列
+     给你两个字符串 s1 和 s2 ，写一个函数来判断 s2 是否包含 s1 的排列。如果是，返回 true ；否则，返回 false 。
+     换句话说，s1 的排列之一是 s2 的 子串 。
+     
+     示例 1：
+     输入：s1 = "ab" s2 = "eidbaooo"
+     输出：true
+     解释：s2 包含 s1 的排列之一 ("ba").
+     
+     示例 2：
+     输入：s1= "ab" s2 = "eidboaoo"
+     输出：false
+     */
+    func checkInclusion(_ s1: String, _ s2: String) -> Bool {
+        let s1Count = s1.count
+        let s2Count = s2.count
+        
+        if s1Count > s2Count {
+            return false
+        }
+        
+        var mapS1 = [Character: Int]()
+        var mapS2 = [Character: Int]()
+        
+        //先加两个
+        for i in 0..<s1.count {
+            let char1 = Array(s1)[i]
+            mapS1.updateValue((mapS1[char1] ?? 0) + 1, forKey: char1)
+            let char2 = Array(s2)[i]
+            mapS2.updateValue((mapS2[char2] ?? 0) + 1, forKey: char2)
+        }
+        
+        var index = s1Count
+        while index < s2Count {
+            if mapS1 == mapS2 {
+                return true
+            }
+            
+            let beforeChar = Array(s2)[index - s1Count]
+            let afterChar = Array(s2)[index]
+            
+            //移除
+            mapS2.updateValue((mapS2[beforeChar] ?? 1) - 1, forKey: beforeChar)
+            if mapS2[beforeChar] == 0 {
+                mapS2.removeValue(forKey: beforeChar)
+            }
+            
+            //添加
+            mapS2.updateValue((mapS2[afterChar] ?? 0) + 1, forKey: afterChar)
+            
+            index += 1
+        }
+        
+        return mapS1 == mapS2
+    }
+    
+//    func checkInclusion(_ s1: String, _ s2: String) -> Bool {
+//        var dic1: [Character : Int] = [:]
+//
+//
+//        for char in s1 {
+//            dic1.updateValue((dic1[char] ?? 0) + 1, forKey: char)
+//        }
+//
+//        let str2 = Array(s2)
+//        var dic2: [Character : Int] = [:]
+//
+//        var start = -1
+//
+//        for (index, char) in str2.enumerated() {
+//            if index >= s1.count{
+//                start += 1
+//                let startChar = str2[start]
+//                if dic2[startChar] == 1 {
+//                    dic2.removeValue(forKey: startChar)
+//                } else {
+//                    dic2.updateValue((dic2[startChar] ?? 0)-1, forKey: startChar)
+//                }
+//            }
+//            dic2.updateValue((dic2[char] ?? 0) + 1, forKey: char)
+//            if dic1 == dic2{
+//                return true
+//            }
+//        }
+//        return false
+//    }
+}
