@@ -94,34 +94,6 @@ extension ViewController {
 }
 }
 
-extension ViewController {
-    func islandPerimeter1(_ grid: [[Int]]) -> Int {
-        var land = 0    // 土地个数
-        var border = 0  // 接壤边界的条数
-
-        for j in 0..<grid.count { // 第j行
-            for i in 0..<grid[0].count { // 第i列
-                if (grid[j][i] == 1) {
-                    land = land + 1
-
-                    // 计算右边的边界接壤的个数
-                    if i < grid[0].count - 1, grid[j][i + 1] == 1 {
-                        border = border + 1
-                    }
-
-                    // 计算下边的边界接壤的个数
-                    if j + 1 < grid.count, j < grid.count - 1, grid[j + 1][i] == 1 {
-                        border = border + 1
-                    }
-                }
-            }
-        }
-
-        // 每个岛屿边长为4，两个岛屿相交，则两则总边长减2
-        return 4 * land - 2 * border;
-    }
-}
-
 /*
  1365. 有多少小于当前数字的数字
  给你一个数组 nums，对于其中每个元素 nums[i]，请你统计数组中比它小的所有数字的数目。
@@ -270,4 +242,106 @@ extension ViewController {
             return result
         }
     }
+}
+
+extension ViewController {
+    func permute(_ nums: [Int]) -> [[Int]] {
+        //设置一个保存是否使用过的数组 [false, false ,false]
+        var visitedStausList = Array(repeating: false, count: nums.count)
+        dfs(nums, [], &visitedStausList)
+        return res
+    }
+
+    
+    func dfs(_ nums: [Int], _ path: [Int], _ visitedStausList: inout [Bool]) {
+        if path.count == nums.count {
+            res.append(path)
+            return
+        }
+        
+        for index in 0..<nums.count {
+            // 已经使用过，continue
+            if visitedStausList[index] == true {
+                continue
+            }
+            
+            //第i个使用过
+            visitedStausList[index] = true
+            //组合
+            let newList = [nums[index]] + path
+            dfs(nums, newList, &visitedStausList)
+            //重置
+            visitedStausList[index] = false
+        }
+    }
+}
+
+extension ViewController {
+    func lemonadeChange(_ bills: [Int]) -> Bool {
+        var five = 0, ten = 0
+
+        for (index, item) in bills.enumerated() {
+            print("--\(index)")
+            if item == 5 {
+                five += 1
+
+            } else if item == 10 {
+                if five == 0 {
+                    return false
+                }
+                five -= 1
+                ten += 1
+
+            } else if item == 20 {
+                if ten == 0 {
+                    //只有5元钱
+                    if five >= 3 {
+                        five -= 3
+                    } else {
+                        return false
+                    }
+                    
+                } else {
+                    if five > 0 {
+                        five -= 1
+                        ten -= 1
+                    } else {
+                        return false
+                    }
+                }
+            }
+        }
+
+        return true
+    }
+    
+    
+//    func lemonadeChange(_ bills: [Int]) -> Bool {
+//        var changeMoney = [Int]()
+//
+//        for item in bills {
+//            print("--\(item)")
+//            if item == 5 {
+//                changeMoney.append(item)
+//            } else {
+//                var newMoney = item
+//                var newList = [Int]()
+//                for change in changeMoney {
+//                    if change < newMoney, newMoney > 5 {
+//                        newMoney = newMoney - change
+//                    } else {
+//                        newList.append(change)
+//                    }
+//                }
+//
+//                if newMoney != 5 {
+//                    return false
+//                }
+//
+//                newList.insert(item, at: 0)
+//                changeMoney = newList
+//            }
+//        }
+//        return true
+//    }
 }

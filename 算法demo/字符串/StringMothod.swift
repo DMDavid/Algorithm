@@ -207,76 +207,273 @@ extension ViewController {
      输出：false
      */
     func checkInclusion(_ s1: String, _ s2: String) -> Bool {
-        let s1Count = s1.count
-        let s2Count = s2.count
-        
-        if s1Count > s2Count {
-            return false
+        var dic1: [Character : Int] = [:]
+
+        //放入哈希表中（字典)
+        for char in s1 {
+            dic1.updateValue((dic1[char] ?? 0) + 1, forKey: char)
         }
-        
-        var mapS1 = [Character: Int]()
-        var mapS2 = [Character: Int]()
-        
-        //先加两个
-        for i in 0..<s1.count {
-            let char1 = Array(s1)[i]
-            mapS1.updateValue((mapS1[char1] ?? 0) + 1, forKey: char1)
-            let char2 = Array(s2)[i]
-            mapS2.updateValue((mapS2[char2] ?? 0) + 1, forKey: char2)
-        }
-        
-        var index = s1Count
-        while index < s2Count {
-            if mapS1 == mapS2 {
+
+        //s2 数组
+        let str2 = Array(s2)
+        var dic2: [Character : Int] = [:]
+
+        var start = -1
+
+        for (index, char) in str2.enumerated() {
+            if index >= s1.count{
+                //s2的个数要大于等于s1
+                start += 1
+                let startChar = str2[start]
+                if dic2[startChar] == 1 {
+                    //步骤一：移动s2的dict2窗口
+                    dic2.removeValue(forKey: startChar)
+                } else {
+                    dic2.updateValue((dic2[startChar] ?? 0)-1, forKey: startChar)
+                }
+            }
+            //步骤二：移动s2的dict2窗口
+            dic2.updateValue((dic2[char] ?? 0) + 1, forKey: char)
+            
+            //直到满足为止
+            if dic1 == dic2{
                 return true
             }
-            
-            let beforeChar = Array(s2)[index - s1Count]
-            let afterChar = Array(s2)[index]
-            
-            //移除
-            mapS2.updateValue((mapS2[beforeChar] ?? 1) - 1, forKey: beforeChar)
-            if mapS2[beforeChar] == 0 {
-                mapS2.removeValue(forKey: beforeChar)
+        }
+        return false
+    }
+}
+
+extension ViewController {
+    func longestPalindrome(_ s: String) -> Int {
+        let list = Array(s)
+        var map: [Character: Int] = [:]
+        for item in list {
+            if let count = map[item] {
+                map[item] = count + 1
+            } else {
+                map[item] = 1
             }
-            
-            //添加
-            mapS2.updateValue((mapS2[afterChar] ?? 0) + 1, forKey: afterChar)
-            
-            index += 1
         }
         
-        return mapS1 == mapS2
+        var lenth = 0
+        var oddNumber = 0
+        for key in map.keys {
+            if let count = map[key] {
+                
+                // 偶数
+                if count % 2 == 0 {
+                    lenth += count
+                    
+                } else {
+                    //奇数
+                    lenth += count - 1
+                    oddNumber = 1
+                }
+            }
+        }
+
+        return lenth + oddNumber
+    }
+}
+
+extension ViewController {
+    func combine(_ n: Int, _ k: Int) -> [[Int]] {
+        if n < k {
+            return [[]]
+        }
+        
+        var nums = [Int]()
+        for i in 1...n {
+            nums.append(i)
+        }
+        
+        var visited = Array(repeating: false, count: nums.count)
+        helper(k, nums, [], &visited)
+        return res
     }
     
-//    func checkInclusion(_ s1: String, _ s2: String) -> Bool {
-//        var dic1: [Character : Int] = [:]
-//
-//
-//        for char in s1 {
-//            dic1.updateValue((dic1[char] ?? 0) + 1, forKey: char)
+    func helper(_ k: Int, _ list: [Int], _ path: [Int], _ visited: inout [Bool]) {
+        if path.count == k {
+            res.append(path)
+            return
+        }
+        
+        for index in 0..<list.count {
+            if visited[index] == true {
+                continue
+            }
+            
+            let currentNum = list[index]
+            
+            visited[index] = true
+            helper(k, list, path + [currentNum], &visited)
+            visited[index] = false
+        }
+    }
+    
+//    func helper(_ k: Int, _ begin: Int, _ list: [Int], _ path: [Int]) {
+//        if path.count == k {
+//            res.append(path)
+//            return
 //        }
 //
-//        let str2 = Array(s2)
-//        var dic2: [Character : Int] = [:]
-//
-//        var start = -1
-//
-//        for (index, char) in str2.enumerated() {
-//            if index >= s1.count{
-//                start += 1
-//                let startChar = str2[start]
-//                if dic2[startChar] == 1 {
-//                    dic2.removeValue(forKey: startChar)
-//                } else {
-//                    dic2.updateValue((dic2[startChar] ?? 0)-1, forKey: startChar)
-//                }
-//            }
-//            dic2.updateValue((dic2[char] ?? 0) + 1, forKey: char)
-//            if dic1 == dic2{
-//                return true
-//            }
+//        for index in begin..<list.count {
+//            let currentNum = list[index]
+//            helper(k, index + 1, list, path + [currentNum])
 //        }
-//        return false
 //    }
+
+//    func helper(_ k: Int, _ begin: Int, _ list: [Int], _ path: [Int], _ visited: inout [Bool]) {
+//        if path.count == k {
+//            print("path --- \(path)")
+//            res.append(path)
+//            return
+//        }
+//
+//        for index in begin..<list.count {
+////            // 已经使用过，continue
+////            if visited[index] == true {
+////                continue
+////            }
+//
+//            let currentNum = list[index]
+////            visited[index] = true
+//            helper(k, index + 1, list, path + [currentNum], &visited)
+////            visited[index] = false
+//        }
+//    }
+    
+}
+
+extension ViewController {
+    func longestCommonPrefix(_ strs: [String]) -> String {
+        guard strs.count > 0 else { return "" }
+        //找出最小的一个
+        var minStr = ""
+        for subStr in strs {
+            if minStr.count < subStr.count {
+                minStr = subStr
+            }
+        }
+
+        var minCount = minStr.count
+        while minCount > 0 {
+            let beginIndex = String.Index.init(encodedOffset: 0)
+            let endIndex = String.Index.init(encodedOffset: minCount)
+            let str = minStr[beginIndex..<endIndex]
+            
+            var include = true
+            
+            
+            for subStr in strs {
+                if !subStr.hasPrefix(str) {
+                    include = false
+                    break
+                }
+            }
+            
+            minCount -= 1
+            
+            //包括
+            if include {
+                return String(str)
+            }
+        }
+        return ""
+        
+        var list = [Int]()
+        list.sorted(by: { $0 < $1 })
+    }
+}
+
+extension ViewController {
+    func findContentChildren(_ g: [Int], _ s: [Int]) -> Int {
+        var sortedG = g.sorted(by: { $0 < $1 })
+        var sortedS = s.sorted(by: { $0 < $1 })
+
+        var index = 0
+        var count = 0
+        for children in sortedG {
+            while index < sortedS.count {
+                var cookie = sortedS[index]
+                index += 1
+                if children <= cookie {
+                    count += 1
+                    break
+                }
+            }
+        }
+
+        return count
+    }
+}
+
+extension ViewController {
+    func canPlaceFlowers(_ flowerbed: [Int], _ n: Int) -> Bool {
+        var maxCount = 0
+        var prev = -1
+
+        for (index, item) in flowerbed.enumerated() {
+            if item > 0 {
+                if prev < 0 {
+                    maxCount += index / 2
+                } else {
+                    maxCount += (index - prev - 2) / 2
+                }
+                prev = index
+            }
+        }
+
+        // 没有种植过任何的❀
+        if prev < 0 {
+            maxCount += (flowerbed.count + 1) / 2
+        } else {
+            maxCount += (flowerbed.count - prev - 1) / 2
+        }
+
+        return maxCount >= n
+    }
+}
+
+extension ViewController {
+    func validPalindrome(_ s: String) -> Bool {
+        let list = Array(s)
+        
+        var left = 0
+        var right = list.count-1
+
+        while left <= right {
+            if list[left] == list[right] {
+                left += 1
+                right -= 1
+
+            } else {
+
+                if isValidPalindrome(left + 1, right, list) || isValidPalindrome(left, right - 1, list) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        }
+
+        return true
+    }
+
+    func isValidPalindrome(_ left: Int, _ right: Int, _ list: [Character]) -> Bool {
+        var newLeft = left
+        var newRight = right
+
+        while newLeft <= newRight {
+            if list[newLeft] == list[newRight] {
+                newLeft += 1
+                newRight -= 1
+            } else {
+                return false
+            }
+        }
+
+        return true
+    }
 }

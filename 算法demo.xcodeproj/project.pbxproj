@@ -22,6 +22,9 @@
 		138749D8255160DF0050795E /* ViewController+Extension1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138749D7255160DF0050795E /* ViewController+Extension1.swift */; };
 		138749DB255258470050795E /* ViewController+Extension2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138749DA255258470050795E /* ViewController+Extension2.swift */; };
 		13BC6C1E2578EF2D005B2BA9 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC6C1D2578EF2D005B2BA9 /* Tree.swift */; };
+		314661FD2844BBBC0065E64D /* SwiftSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314661FC2844BBBC0065E64D /* SwiftSort.swift */; };
+		31466202284DDFBA0065E64D /* DFS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31466201284DDFBA0065E64D /* DFS.swift */; };
+		31D1B491280D3D99000F3528 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1B490280D3D99000F3528 /* Array.swift */; };
 		31D299632716C35500882D2F /* DoublePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D299622716C35500882D2F /* DoublePoint.swift */; };
 		D00F198A26687565005B6F0F /* ViewController+LRU.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F198926687565005B6F0F /* ViewController+LRU.swift */; };
 		D03A875C2664D5AA00F56D3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A875B2664D5AA00F56D3F /* SceneDelegate.swift */; };
@@ -51,6 +54,9 @@
 		138749D7255160DF0050795E /* ViewController+Extension1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension1.swift"; sourceTree = "<group>"; };
 		138749DA255258470050795E /* ViewController+Extension2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ViewController+Extension2.swift"; path = "Assets.xcassets/ViewController+Extension2.swift"; sourceTree = "<group>"; };
 		13BC6C1D2578EF2D005B2BA9 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		314661FC2844BBBC0065E64D /* SwiftSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSort.swift; sourceTree = "<group>"; };
+		31466201284DDFBA0065E64D /* DFS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFS.swift; sourceTree = "<group>"; };
+		31D1B490280D3D99000F3528 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		31D299622716C35500882D2F /* DoublePoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublePoint.swift; sourceTree = "<group>"; };
 		D00F198926687565005B6F0F /* ViewController+LRU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+LRU.swift"; sourceTree = "<group>"; };
 		D03A875B2664D5AA00F56D3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +119,8 @@
 		1353623E253D80BA0058B31A /* 算法demo */ = {
 			isa = PBXGroup;
 			children = (
+				31466200284DDF8F0065E64D /* 深度优先 */,
+				31D1B48F280D3D6A000F3528 /* 数组 */,
 				31D299612716C33D00882D2F /* 双指针 */,
 				D00F198826687555005B6F0F /* LRU */,
 				D0B903C826609DB1002E7A28 /* 哈希 */,
@@ -146,6 +154,7 @@
 			children = (
 				136A313825EFE60400E2B812 /* Sort.h */,
 				136A313925EFE60400E2B812 /* Sort.m */,
+				314661FC2844BBBC0065E64D /* SwiftSort.swift */,
 			);
 			path = "排序";
 			sourceTree = "<group>";
@@ -156,6 +165,22 @@
 				13BC6C1D2578EF2D005B2BA9 /* Tree.swift */,
 			);
 			path = "树";
+			sourceTree = "<group>";
+		};
+		31466200284DDF8F0065E64D /* 深度优先 */ = {
+			isa = PBXGroup;
+			children = (
+				31466201284DDFBA0065E64D /* DFS.swift */,
+			);
+			path = "深度优先";
+			sourceTree = "<group>";
+		};
+		31D1B48F280D3D6A000F3528 /* 数组 */ = {
+			isa = PBXGroup;
+			children = (
+				31D1B490280D3D99000F3528 /* Array.swift */,
+			);
+			path = "数组";
 			sourceTree = "<group>";
 		};
 		31D299612716C33D00882D2F /* 双指针 */ = {
@@ -279,8 +304,10 @@
 				D03A875C2664D5AA00F56D3F /* SceneDelegate.swift in Sources */,
 				D0A3A76B265FAD26006B5848 /* ViewController+DongTai.swift in Sources */,
 				138749DB255258470050795E /* ViewController+Extension2.swift in Sources */,
+				31D1B491280D3D99000F3528 /* Array.swift in Sources */,
 				31D299632716C35500882D2F /* DoublePoint.swift in Sources */,
 				D0B903CA26609DC2002E7A28 /* ViewController+Hash.swift in Sources */,
+				31466202284DDFBA0065E64D /* DFS.swift in Sources */,
 				1343270D254969B30009B1A2 /* ObjcAlogorithm.m in Sources */,
 				13BC6C1E2578EF2D005B2BA9 /* Tree.swift in Sources */,
 				1304B3B825A6BC22003755A8 /* StringMothod.swift in Sources */,
@@ -288,6 +315,7 @@
 				138749D8255160DF0050795E /* ViewController+Extension1.swift in Sources */,
 				131A051A2563C35000FBB429 /* Lianbiao.swift in Sources */,
 				1343227A254814B50009B1A2 /* AlogorithmModel.swift in Sources */,
+				314661FD2844BBBC0065E64D /* SwiftSort.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

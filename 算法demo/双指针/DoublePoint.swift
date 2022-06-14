@@ -99,3 +99,43 @@ extension ViewController {
         return resultStr
     }
 }
+
+extension ViewController {
+    func threeSumClosest(_ nums: [Int], _ target: Int) -> Int {
+        guard nums.count >= 3 else { return 0 }
+
+        var best = nums[0] + nums[1] + nums[2]
+
+        //排序
+        let newNums = nums.sorted { value1, value2 in
+            return value1 < value2
+        }
+
+        for (index, item) in newNums.enumerated() {
+            var left = index + 1
+            var right = newNums.count - 1
+            
+            while left < right {
+                let sum = newNums[left] + newNums[right] + item
+
+                if sum == target {
+                    return target
+
+                }
+
+                if abs(sum - target) < abs(best - target) {
+                    best = sum
+                }
+                
+                if sum > target {
+                    right -= 1
+
+                } else {
+                    left += 1
+                }
+            }
+        }
+
+        return best
+    }
+}

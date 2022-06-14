@@ -384,3 +384,55 @@ extension ViewController {
         return p?.val == q?.val && check(p?.left, q?.right) && check(p?.right, q?.left)
     }
 }
+
+
+/*
+ 剑指 Offer II 056. 二叉搜索树中两个节点之和
+ */
+extension ViewController {
+    func findTarget(_ root: TreeNode?, _ k: Int) -> Bool {
+        var setList = [Int]()
+        func dfs(_ root: TreeNode?) -> Bool {
+            guard let tree = root else { return false }
+            
+            if setList.contains(k - tree.val) { return true }
+            setList.append(tree.val)
+            return dfs(tree.left) || dfs(tree.right)
+        }
+        
+        return dfs(root)
+    }
+}
+
+extension ViewController {
+    /*
+     层序遍历
+     */
+    func levelOrder(_ root: TreeNode?) -> [[Int]] {
+        guard let root = root else {
+            return []
+        }
+        
+        var result = [[Int]]()
+        
+        var queue = [TreeNode?]()
+        queue.append(root)
+        while !queue.isEmpty {
+            var level = [Int]()
+            let count = queue.count
+            for _ in 0..<count {
+                let node = queue.removeFirst()
+                level.append(node!.val)
+                if node?.left != nil {
+                    queue.append(node?.left)
+                }
+                if node?.right != nil {
+                    queue.append(node?.right)
+                }
+            }
+            result.append(level)
+        }
+        
+        return result
+    }
+}
